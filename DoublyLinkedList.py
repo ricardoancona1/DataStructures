@@ -2,7 +2,7 @@ class Node:
     def __init__(self,data):
         self.data=data
         self.next=None
-
+        self.prev=None
 class LinkedList:
     def __init__(self,head=None):
         self.head=head
@@ -27,12 +27,14 @@ class LinkedList:
     
     def clear(self):
         self.head=None
-
+        
 node= Node(input("Node1 :"))
 node2=Node(input("Node2 :"))
 node3=Node(input("Node3 :"))
 node.next=node2
+node2.prev=node
 node2.next=node3
+node3.prev=node2
 linkedlist=LinkedList(node)
 print("First node:",linkedlist.head.next.data)
 listSize=linkedlist.getSize()
@@ -44,4 +46,4 @@ print("this is the last node",lastNode.data)
 
 linkedlist.clear()
 print("Function to empty linked list was executed")
-print("linked list size:",linkedlist.getSize())
+print("New linked list size:",linkedlist.getSize())
