@@ -12,13 +12,21 @@ class BubbleSort:
             BubbleSort.sortedList[i] = element
         BubbleSort.sort(size)
 
-    def sort(size):
+    def sort(size):#[4,22,13]
+        print("size = ",size)
         for i in range(1, size):
-            for i in range(0, size-1):
-                if BubbleSort.sortedList[i] > BubbleSort.sortedList[i+1]:
-                    aux = BubbleSort.sortedList[i]
-                    BubbleSort.sortedList[i] = BubbleSort.sortedList[i+1]
-                    BubbleSort.sortedList[i+1] = aux
+            for j in range(0, size-1):
+                k=j+1
+                currentValue=int(BubbleSort.sortedList[j] )
+                nextValue=int(BubbleSort.sortedList[j+1])
+                if currentValue> nextValue:
+                    
+                    print("sortedList[",j,"](",BubbleSort.sortedList[j],") > sortedList[",k,"](",BubbleSort.sortedList[k],") =true")
+                    aux = BubbleSort.sortedList[j]
+                    BubbleSort.sortedList[j] = BubbleSort.sortedList[j+1]
+                    BubbleSort.sortedList[j+1] = aux
+                else:
+                     print("sortedList[",j,"](",BubbleSort.sortedList[j],") > sortedList[",k,"](",BubbleSort.sortedList[j+1],") =false")
         print("input list", BubbleSort.inputList)
         print("Sorted list", BubbleSort.sortedList)
 
